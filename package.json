@@ -14,6 +14,7 @@
     "morgan": "^1.10.0"
   },
   "devDependencies": {
+    "eslint": "^7.26.0",
     "nodemon": "^2.0.7"
   },
   "scripts": {
@@ -22,6 +23,7 @@
     "build:ui": "rm -rf build && cd ../fullstack-open-2021/part2/phonebook && yarn build --prod && cp -r build ../../../phonebook-backend",
     "deploy": "git push heroku master",
     "deploy:full": "yarn build:ui && git add . && git commit -m uibuild && git push && yarn deploy",
-    "logs:prod": "heroku logs --tail"
+    "logs:prod": "heroku logs --tail",
+    "lint": "eslint ."
   }
 }
