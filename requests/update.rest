@@ -1,0 +1,27 @@
+PUT http://localhost:3001/api/persons/609e3e3d15e07b69f33e7526 HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Foo Bar",
+    "number": "1"
+}
+
+### Update non-existing:
+
+PUT http://localhost:3001/api/persons/609e3e3d15e07b69f33e7527 HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Foo Bar",
+    "number": "1"
+}
+
+### Invalid:
+
+PUT http://localhost:3001/api/persons/1 HTTP/1.1
+content-type: application/json
+
+{
+    "name": "Foo Bar",
+    "number": "1"
+}
