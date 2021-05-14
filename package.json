@@ -15,6 +15,10 @@
   },
   "scripts": {
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "build:ui": "rm -rf build && cd ../fullstack-open-2021/part2/phonebook && yarn build --prod && cp -r build ../../../phonebook-backend",
+    "deploy": "git push heroku master",
+    "deploy:full": "yarn build:ui && git add . && git commit -m uibuild && git push && yarn deploy",
+    "logs:prod": "heroku logs --tail"
   }
 }
